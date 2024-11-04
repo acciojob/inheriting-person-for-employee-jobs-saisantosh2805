@@ -1,46 +1,43 @@
-// Define the Person class
 class Person {
-  /**
-   * Constructs a new Person instance.
-   * @param {string} name - The person's name.
-   * @param {number} age - The person's age.
-   */
   constructor(name, age) {
     this.name = name;
     this.age = age;
   }
-
-  /**
-   * Prints a greeting message to the console.
-   */
+ 
   greet() {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
   }
 }
-
-// Define the Employee class that extends Person
+ 
 class Employee extends Person {
-  /**
-   * Constructs a new Employee instance.
-   * @param {string} name - The employee's name.
-   * @param {number} age - The employee's age.
-   * @param {string} jobTitle - The employee's job title.
-   */
   constructor(name, age, jobTitle) {
-    super(name, age); // Call the parent class constructor
+    super(name, age);
     this.jobTitle = jobTitle;
   }
-
-  /**
-   * Prints a job-specific greeting message to the console.
-   */
+ 
   jobGreet() {
     console.log(
       `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`
     );
   }
 }
-
-// Expose the classes to the global window object for Cypress testing
+ 
+// You create an instance of the Person class with the
+// name "Alice" and age 25, and call the greet method.
+// The expected console output is: Hello, my name is Alice, I am 25
+//  years old.
+ 
+const p1 = new Person("Alice", 25);
+p1.greet();
+ 
+// Next, you create an instance of the Employee class with the name "Bob",
+// age 30, and job title "Manager", and call the jobGreet method.
+// The expected console output is: Hello, my name is Bob, I am 30 years old,
+// and my job title is Manager.
+ 
+const Emp = new Employee("Bob", 30, "Manager");
+Emp.jobGreet();
+ 
+// Do not change code below this line
 window.Person = Person;
 window.Employee = Employee;
