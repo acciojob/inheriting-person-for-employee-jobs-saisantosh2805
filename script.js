@@ -41,5 +41,5 @@ class Employee extends Person {
 }
 
 // Expose the classes to the global window object for Cypress testing
-window.Person = Person;
-window.Employee = Employee;
+// window.Person = Person;
+// window.Employee = Employee;
